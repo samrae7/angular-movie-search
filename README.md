@@ -3,7 +3,7 @@
 Built with [angularjs-webpack starter](https://github.com/preboot/angularjs-webpack)
 
 ## Quick start
-# Clone the repo
+### Clone the repo
 $ git clone git@github.com:samrae7/angular-movie-search.git
 
 ### Add api key
@@ -37,7 +37,6 @@ go to [http://localhost:8080](http://localhost:8080) in your browser.
 What you need to run this app:
 * `node` and `npm` (Use [NVM](https://github.com/creationix/nvm))
 * Ensure you're running Node (`v4.1.x`+) and NPM (`2.14.x`+)
-
 
 ## Running the app
 
