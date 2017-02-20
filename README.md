@@ -16,7 +16,7 @@ const API_CONFIG = {
 export {API_CONFIG};
 ```
 
-You will need to replace YOUR API KEY FOR THE MOVIE DATABASE with an api key from
+You will need to replace `<<YOUR API KEY FOR THE MOVIE DATABASE>>` with an api key from
 [The Movie Database](https://www.themoviedb.org/faq/api)
 (create a user account, then request a key from your account page).
 
