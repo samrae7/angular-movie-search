@@ -22,7 +22,7 @@ Replace `<<YOUR API KEY FOR THE MOVIE DATABASE>>` with an api key from
 [The Movie Database](https://www.themoviedb.org/faq/api)
 (create a user account, then request a key from your account page).
 
-### install dependencies with npm
+### Install dependencies with npm
 
 From the project root:
 `$ npm install`
