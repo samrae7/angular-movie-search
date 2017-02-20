@@ -2,7 +2,7 @@
 
 Simple movie search app built with Angular using webpack. Written in ES6.
 Forked from [angularjs-webpack starter](https://github.com/preboot/angularjs-webpack)
-Styles are [Materialize CSS]{http://materializecss.com/)
+Styles are [Materialize CSS](http://materializecss.com/)
 
 ## Quick start
 ### Clone the repo
@@ -18,12 +18,11 @@ const API_CONFIG = {
 
 export {API_CONFIG};
 ```
-
-You will need to replace `<<YOUR API KEY FOR THE MOVIE DATABASE>>` with an api key from
+Replace `<<YOUR API KEY FOR THE MOVIE DATABASE>>` with an api key from
 [The Movie Database](https://www.themoviedb.org/faq/api)
 (create a user account, then request a key from your account page).
 
-### cd into the project folder and install dependencies with npm
+### From the project root, install dependencies with npm
 $ npm install
 
 ### Start the server
