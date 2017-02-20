@@ -6,7 +6,7 @@ Styles are [Materialize CSS](http://materializecss.com/)
 
 ## Quick start
 ### Clone the repo
-$ git clone git@github.com:samrae7/angular-movie-search.git
+`$ git clone git@github.com:samrae7/angular-movie-search.git`
 
 ### Add api key
 Inside src folder create a new file, config.js and enter:
@@ -22,12 +22,13 @@ Replace `<<YOUR API KEY FOR THE MOVIE DATABASE>>` with an api key from
 [The Movie Database](https://www.themoviedb.org/faq/api)
 (create a user account, then request a key from your account page).
 
-### From the project root, install dependencies with npm
-$ npm install
+### install dependencies with npm
+
+From the project root:
+`$ npm install`
 
 ### Start the server
-$ npm start
-
+`$ npm start`
 
 ## Dependencies
 
