@@ -1,6 +1,8 @@
 # Movie search app
 
-Built with [angularjs-webpack starter](https://github.com/preboot/angularjs-webpack)
+Simple movie search app built with Angular using webpack. Written in ES6.
+Forked from [angularjs-webpack starter](https://github.com/preboot/angularjs-webpack)
+Styles are [Materialize CSS]{http://materializecss.com/)
 
 ## Quick start
 ### Clone the repo
