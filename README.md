@@ -8,6 +8,7 @@ $ git clone git@github.com:samrae7/angular-movie-search.git
 
 ### Add api key
 Inside src folder create a new file, config.js and enter:
+
 ```
 const API_CONFIG = {
   API_KEY : <<YOUR API KEY FOR THE MOVIE DATABASE>>
@@ -23,12 +24,9 @@ You will need to replace `<<YOUR API KEY FOR THE MOVIE DATABASE>>` with an api k
 ### cd into the project folder and install dependencies with npm
 $ npm install
 
-### start the server
+### Start the server
 $ npm start
 
-### run tests
-
-`$ npm run test-watch`
 
 ## Dependencies
 
@@ -54,11 +52,7 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 
 ## Testing
 
-#### 1. Unit Tests
+### Unit Tests
 
 * single run: `npm test`
 * live mode (TDD style): `npm run test-watch`
-
-# License
-
-[MIT](/LICENSE)
