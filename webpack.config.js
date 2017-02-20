@@ -167,6 +167,13 @@ module.exports = function makeWebpackConfig() {
           plugins: [autoprefixer]
         }
       }
+    }),
+    //resolve aliases for jQuery (used by materialize-css)
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: "jquery",
+      'window.$': 'jquery',
+      'window.jQuery': 'jquery',
     })
   ];
 

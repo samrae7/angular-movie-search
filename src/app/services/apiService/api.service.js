@@ -1,39 +1,61 @@
-import axios from 'axios';
+import angular from 'angular';
 import {API_CONFIG} from '../../../config';
 
-export default class ApiService {
-  constructor() {
+class ApiService {
+  constructor($http, API_URLS) {
+    this.API_URLS = API_URLS;
+    this.$http = $http;
     this.getConfig()
       .then((response) => {
-        this.config = response;
-      });
+        this.imagesConfig = response.data.images;
+        this.baseUrlForPosters = this.getBaseUrlForPosters()
+      })
+      .catch((error) => console.log(error, 'error'));
   }
 
 
   getConfig() {
-    return axios.get('https://api.themoviedb.org/3/configuration', {
+    return this.$http.get(this.API_URLS.BASE + this.API_URLS.IMAGE_CONFIG, {
       params: {
         api_key: API_CONFIG.API_KEY
       }
     })
   }
 
-  getMovies(searchString) {
-    console.log('yoooo', searchString);
-    if (searchString.length < 3) {
-      return;
+  getBaseUrlForPosters() {
+    if (this.imagesConfig) {
+      return this.imagesConfig.base_url + this.imagesConfig.poster_sizes[3];
     }
-    //TODO - define constant for this
-    axios.get('https://api.themoviedb.org/3/search/movie?', {
+  }
+
+  getMovies(searchString) {
+    return this.$http.get(this.API_URLS.BASE + this.API_URLS.SEARCH, {
       params: {
         api_key: API_CONFIG.API_KEY,
         query: searchString
       }
     })
       .then((response) => {
-        console.log(response.data.results);
-        return response.data.results
+        let movies = response.data.results;
+        movies.forEach((movie) => {
+          if (movie.poster_path) {
+            movie.posterUrl = this.baseUrlForPosters + movie.poster_path
+          }
+        });
+        return movies;
       })
       .catch((error) => console.log(error));
   }
 }
+
+ApiService.$inject = ['$http', 'API_URLS'];
+
+export default angular.module('api', [])
+  .constant('API_URLS', {
+    BASE: 'https://api.themoviedb.org/3',
+    SEARCH: '/search/movie',
+    IMAGE_CONFIG: '/configuration',
+    PLACEHOLDER_IMAGE: 'https://placeholdit.imgix.net/~text?txtsize=30&txt=No+poster+available&w=342&h=643&txttrack=0'
+  })
+  .service('apiService', ApiService)
+  .name;

@@ -7,15 +7,14 @@ import routing from './app.config';
 import routes from './app.routes';
 import '../style/app.css';
 
-import ApiService from './services/apiService/api.service';
-import SearchController from './search/search.controller';
+import search from './search/search.controller';
+import api from './services/apiService/api.service';
+
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [uirouter])
+export default angular.module(MODULE_NAME, [uirouter, api, search])
   .config(routing)
   .config(routes)
-  .service('apiService', ApiService)
-  .controller('SearchController', SearchController);
+  .name;
 
-export default MODULE_NAME;

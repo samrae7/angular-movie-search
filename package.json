@@ -22,7 +22,6 @@
   "dependencies": {
     "angular": "^1.5.0",
     "angular-ui-router": "^0.4.2",
-    "axios": "^0.15.3",
     "materialize-css": "^0.98.0"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 /* styles in src/style directory are applied to the whole page */
 body {
-  background: #0147A7;
+  background-color: #0147A7;
   color: #fff;
 }
 
@@ -8,15 +8,12 @@ a {
   color: #03A9F4;
 }
 
-main {
-  padding: 1em;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  margin-top: 50px;
-  display: block;
+/*!*Materialize overrides*!*/
+
+.card .card-content p, .card .card-reveal p {
+  color: black;
 }
 
-footer {
-  text-align: center;
-  font-size: 0.8em;
+nav.custom-nav {
+  background-color: #0147A7;
 }

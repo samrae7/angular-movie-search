@@ -1,19 +1,45 @@
-export default class SearchController {
+import angular from 'angular';
+import api from '../services/apiService/api.service';
 
-  constructor($scope, apiService) {
-    this.movies = [];
+class SearchController {
+  constructor(
+    $scope,
+    apiService,
+    $location,
+    $anchorScroll,
+    API_URLS
+  ) {
     this.$scope = $scope;
-    this._apiService = apiService;
+    this.apiService = apiService;
+    this.$location = $location;
+    this.$anchorScroll = $anchorScroll;
+    this.placeholderImageUrl = API_URLS.PLACEHOLDER_IMAGE;
   }
 
   search() {
-    this._apiService.getMovies(this.searchString)
+    if (this.searchString.length < 3) {
+      return;
+    }
+    this.apiService.getMovies(this.searchString)
       .then((movies) => {
         this.movies = movies;
-        this.$scope.$digest();
       });
+  }
+
+  scrollToTopOfCard(index) {
+    this.$location.hash('top--' + index);
+    this.$anchorScroll();
   }
 }
 
-SearchController.$inject = ['$scope'];
-SearchController.$inject = ['apiService'];
+SearchController.$inject = [
+  '$scope',
+  'apiService',
+  '$location',
+  '$anchorScroll',
+  'API_URLS'
+];
+
+export default angular.module('search', [api])
+  .controller('SearchController', SearchController)
+  .name;
