@@ -1,53 +1,36 @@
-# angular-webpack
+# movie search app
 
-[![Dependency Status](https://david-dm.org/preboot/angular-webpack/status.svg)](https://david-dm.org/preboot/angular-webpack#info=dependencies) [![devDependency Status](https://david-dm.org/preboot/angular-webpack/dev-status.svg)](https://david-dm.org/preboot/angular-webpack#info=devDependencies)
-
-A complete, yet simple, starter for Angular using Webpack.
-
-This workflow serves as a starting point for building Angular 1.x applications using Webpack 2.x. Should be noted that apart from the pre-installed angular package, this workflow is pretty much generic.
-
-* Heavily commented webpack configuration with reasonable defaults.
-* ES6, and ES7 support with babel.
-* Source maps included in all builds.
-* Development server with live reload.
-* Production builds with cache busting.
-* Testing environment using karma to run tests and jasmine as the framework.
-* Code coverage when tests are run.
-* No gulp and no grunt, just npm scripts.
-
->Warning: Make sure you're using the latest version of Node.js and NPM
+Built with [angularjs-webpack starter](https://github.com/preboot/angularjs-webpack)
 
 ### Quick start
+# Clone the repo
+$ git clone git@github.com:samrae7/angular-movie-search.git
 
-> Clone/Download the repo then edit `app.js` inside [`/src/app/app.js`](/src/app/app.js)
+# Add api key
+Inside src folder create a new file, config.js and enter:
+```
+const API_CONFIG = {
+  API_KEY : <<YOUR API KEY FOR THE MOVIE DATABASE>>
+};
 
-```bash
-# clone our repo
-$ git clone https://github.com/preboot/angular-webpack.git my-app
+export {API_CONFIG};
+```
 
-# change directory to your app
-$ cd my-app
+You will need to replace <<YOUR API KEY FOR THE MOVIE DATABASE>> with an api key from
+The Movie Database (https://www.themoviedb.org/faq/api)
+(create a user account, then request a key from your account page).
 
-# install the dependencies with npm
+# cd into the project folder and install dependencies with npm
 $ npm install
 
 # start the server
 $ npm start
+
+# run tests
+$ npm run test-watch
 ```
 
 go to [http://localhost:8080](http://localhost:8080) in your browser.
-
-# Table of Contents
-
-* [Getting Started](#getting-started)
-    * [Dependencies](#dependencies)
-    * [Installing](#installing)
-    * [Running the app](#running-the-app)
-    * [Developing](#developing)
-    * [Testing](#testing)
-* [License](#license)
-
-# Getting Started
 
 ## Dependencies
 
@@ -55,11 +38,6 @@ What you need to run this app:
 * `node` and `npm` (Use [NVM](https://github.com/creationix/nvm))
 * Ensure you're running Node (`v4.1.x`+) and NPM (`2.14.x`+)
 
-## Installing
-
-* `fork` this repo
-* `clone` your fork
-* `npm install` to install all dependencies
 
 ## Running the app
 
